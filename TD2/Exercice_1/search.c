@@ -25,8 +25,7 @@ int jump_search(int *arr, int n, int target)
         if (prev >= n) return -1;
     }
 
-    for(int i=prev  ; i <= min_int(step,n) ; i++ ){
-
+    for(int i=prev  ; i < min_int(step,n) ; i++ ){
         if ( arr[i] ==  target ) return i ;
     }
     
@@ -43,7 +42,7 @@ int binary_search(int *arr, int n, int target)
     {
         int mid = (left + right )/2 ;
         if ( arr[mid] == target ) return mid ; 
-        else if (arr[mid] < target ) return left  = mid + 1 ;
+        else if (arr[mid] < target ) left  = mid + 1 ;
         else right = mid - 1 ;
     }
     return -1;
